@@ -1,5 +1,6 @@
 public class main{
     public static void main(String[] args) {
-        //Inicio
+        Ventana ventana = new Ventana();
+        ventana.setVisible(true);
     }
 }
