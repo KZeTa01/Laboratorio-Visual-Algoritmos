@@ -1,3 +1,3 @@
-public class ventana{
+public class Ventana{
     
 }
