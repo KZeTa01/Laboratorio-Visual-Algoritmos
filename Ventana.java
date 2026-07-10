@@ -87,10 +87,21 @@ public class Ventana extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-        if (e.getSource() == btnSecuencial) {
-            // Pasas 'this' como referencia de que esta Ventana es el padre
-            VentanaSecuencial vSecuencial = new VentanaSecuencial(this);
-            vSecuencial.setVisible(true);
+        if(e.getSource() == btnInsercion){
+            new VentanaInsercion();
+        }
+        if(e.getSource() == btnBurbuja){
+
+        }
+        if(e.getSource() == btnQuickSort){
+
+        }
+
+        if(e.getSource() == btnSecuencial){
+
+        }
+        if(e.getSource() == btnBinaria){
+
         }
     }
 
