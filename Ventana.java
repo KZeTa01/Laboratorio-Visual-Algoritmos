@@ -71,11 +71,11 @@ public class Ventana extends JFrame implements ActionListener{
         Descripcion.setWrapStyleWord(true);
         pDescripcion.add(Descripcion);
 
-        pGif = new JPanel(new GridLayout(2,1,10,10));
+        pGif = new JPanel(new BorderLayout());
         etiquetaGif = new JLabel();
         lbLeyendaGif = new JLabel("", SwingConstants.CENTER);
-        pGif.add(etiquetaGif);  
-        pGif.add(lbLeyendaGif);
+        pGif.add(etiquetaGif, BorderLayout.CENTER);  
+        pGif.add(lbLeyendaGif, BorderLayout.SOUTH);
         pDescripcion.add(pGif);
         pGif.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
         add(titulo, BorderLayout.NORTH);
