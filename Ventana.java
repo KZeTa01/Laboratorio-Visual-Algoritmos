@@ -3,8 +3,8 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Ventana extends JFrame implements ActionListener{
-    JLabel titulo, lbBusqueda, lbOrdenamiento;
-    JPanel pAlgoritmos, pBusqueda, pOrdenamiento, pDescripcion;
+    JLabel titulo, lbBusqueda, lbOrdenamiento, etiquetaGif;
+    JPanel pAlgoritmos, pBusqueda, pOrdenamiento, pDescripcion, pGif;
     JButton btnInsercion, btnBurbuja, btnQuickSort, btnSecuencial, btnBinaria;
     JTextArea Descripcion;
     
@@ -55,9 +55,15 @@ public class Ventana extends JFrame implements ActionListener{
         pAlgoritmos.add(pOrdenamiento);
         pAlgoritmos.add(pBusqueda);
         
-        pDescripcion = new JPanel(new FlowLayout());
+        pDescripcion = new JPanel(new GridLayout(2,1));
         Descripcion = new JTextArea(20,40);
         pDescripcion.add(Descripcion);
+
+        pGif = new JPanel(new FlowLayout());
+        ImageIcon iconoGif = new ImageIcon("gif/OrdenamientoPruebaGif.gif");
+        etiquetaGif = new JLabel(iconoGif);
+        pGif.add(etiquetaGif);  
+        pDescripcion.add(pGif);
 
         add(titulo, BorderLayout.NORTH);
         add(pDescripcion, BorderLayout.EAST);
