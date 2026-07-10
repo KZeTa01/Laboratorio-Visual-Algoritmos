@@ -10,12 +10,20 @@ public class Ventana extends JFrame implements ActionListener{
     ImageIcon iconoGif;
     
     public Ventana(){
+        confiurarVentana();
+        inicializarComponentes();
+        mostrarDescripcion();
+    }
+
+    private void confiurarVentana(){
         setSize(900,700);
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
         setTitle("Laboratorio Visual de Algoritmos");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        
+    }
+
+    public void inicializarComponentes(){
         //Crear Fuentes
         Font fTitulo = new Font("Times New Roman", Font.BOLD,30);
         Font fSubtemas = new Font("Times New Roman", Font.BOLD, 20);
@@ -73,8 +81,6 @@ public class Ventana extends JFrame implements ActionListener{
         add(titulo, BorderLayout.NORTH);
         add(pDescripcion, BorderLayout.EAST);
         add(pAlgoritmos, BorderLayout.CENTER);
-
-        mostrarDescripcion();
     }
     
     @Override
