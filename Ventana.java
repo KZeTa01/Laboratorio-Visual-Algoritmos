@@ -3,8 +3,10 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Ventana extends JFrame implements ActionListener{
-    JLabel titulo;
-    JPanel pCentro, pAlgoritmos, pDescripcion;
+    JLabel titulo, lbBusqueda, lbOrdenamiento;
+    JPanel pAlgoritmos, pBusqueda, pOrdenamiento, pDescripcion;
+    JButton btnInsercion, btnBurbuja, btnQuickSort, btnSecuencial, btnBinaria;
+    JTextArea Descripcion;
     
     public Ventana(){
         setSize(900,700);
@@ -12,25 +14,58 @@ public class Ventana extends JFrame implements ActionListener{
         setLocationRelativeTo(null);
         setTitle("Laboratorio Visual de Algoritmos");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        getContentPane().setBackground(Color.BLACK);
-
+        
+        //Crear Fuentes
+        Font fTitulo = new Font("Times New Roman", Font.BOLD,30);
+        Font fSubtemas = new Font("Times New Roman", Font.BOLD, 20);
+        
+        //Titulo (NORTH)
         titulo = new JLabel("LABORATORIO VISUAL DE ALGORITMOS",  SwingConstants.CENTER);
-        //Configurar fuente personalizada para el JLabel 
-        Font fuente = new Font("Times New Roman", Font.BOLD,30);
-        titulo.setFont(fuente);
-        titulo.setForeground(Color.WHITE);
-        //Metodo para cambiar el color del fondo del JFrame
+            //Configurar fuente personalizada para el JLabel 
+            titulo.setFont(fTitulo);
+        
+        //Paneles
+        pAlgoritmos= new JPanel(new GridLayout(2,1,10,10));
+        pAlgoritmos.setBorder(BorderFactory.createEmptyBorder(10,10,10,10));
+        pBusqueda = new JPanel(new GridLayout(3,1,10,10));
+        pOrdenamiento = new JPanel(new GridLayout(4,1,10,10));
+        
+        //Panel Algoritmos (CENTER)
+            //Ordenamiento
+        lbOrdenamiento = new JLabel("Algoritmos de Ordenamiento");
+            lbOrdenamiento.setFont(fSubtemas);
+        btnInsercion = new JButton("Inserción");
+        btnBurbuja = new JButton("Burbuja");
+        btnQuickSort = new JButton("QuickSort");
+            //Busqueda
+        lbBusqueda = new JLabel("Algoritmos de Busqueda");
+            lbBusqueda.setFont(fSubtemas);
+        btnSecuencial = new JButton("Secuencial o lineal");
+        btnBinaria = new JButton("Binaria o dicotómica");
+        
+        pOrdenamiento.add(lbOrdenamiento);
+        pOrdenamiento.add(btnInsercion);
+        pOrdenamiento.add(btnBurbuja);
+        pOrdenamiento.add(btnQuickSort);
 
-        pCentro= new JPanel(new GridBagLayout());
-        pAlgoritmos= new JPanel(new GridLayout());
-        pDescripcion = new JPanel();
+        pBusqueda.add(lbBusqueda);
+        pBusqueda.add(btnSecuencial);
+        pBusqueda.add(btnBinaria);
+
+        pAlgoritmos.add(pOrdenamiento);
+        pAlgoritmos.add(pBusqueda);
+        
+        pDescripcion = new JPanel(new FlowLayout());
+        Descripcion = new JTextArea(20,40);
+        pDescripcion.add(Descripcion);
 
         add(titulo, BorderLayout.NORTH);
-
+        add(pDescripcion, BorderLayout.EAST);
+        add(pAlgoritmos, BorderLayout.CENTER);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e){
-
+        
     }
 }
