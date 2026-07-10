@@ -86,7 +86,7 @@ public class Ventana extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == btnInsercion){
-
+            new VentanaInsercion();
         }
         if(e.getSource() == btnBurbuja){
 
@@ -94,7 +94,7 @@ public class Ventana extends JFrame implements ActionListener{
         if(e.getSource() == btnQuickSort){
 
         }
-        
+
         if(e.getSource() == btnSecuencial){
 
         }
