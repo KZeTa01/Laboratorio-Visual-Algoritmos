@@ -50,7 +50,9 @@ public class Ventana extends JFrame implements ActionListener{
         lbBusqueda = new JLabel("Algoritmos de Busqueda");
             lbBusqueda.setFont(fSubtemas);
         btnSecuencial = new JButton("Secuencial o lineal");
+        btnSecuencial.addActionListener(this);
         btnBinaria = new JButton("Binaria o dicotómica");
+
         
         pOrdenamiento.add(lbOrdenamiento);
         pOrdenamiento.add(btnInsercion);
@@ -85,7 +87,11 @@ public class Ventana extends JFrame implements ActionListener{
     
     @Override
     public void actionPerformed(ActionEvent e){
-        
+        if (e.getSource() == btnSecuencial) {
+            // Pasas 'this' como referencia de que esta Ventana es el padre
+            VentanaSecuencial vSecuencial = new VentanaSecuencial(this);
+            vSecuencial.setVisible(true);
+        }
     }
 
     private void mostrarDescripcion(){
