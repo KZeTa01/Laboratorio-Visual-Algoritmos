@@ -57,6 +57,9 @@ public class Ventana extends JFrame implements ActionListener{
         
         pDescripcion = new JPanel(new GridLayout(2,1));
         Descripcion = new JTextArea(20,40);
+        Descripcion.setEditable(false);
+        Descripcion.setLineWrap(true);
+        Descripcion.setWrapStyleWord(true);
         pDescripcion.add(Descripcion);
 
         pGif = new JPanel(new FlowLayout());
@@ -68,10 +71,60 @@ public class Ventana extends JFrame implements ActionListener{
         add(titulo, BorderLayout.NORTH);
         add(pDescripcion, BorderLayout.EAST);
         add(pAlgoritmos, BorderLayout.CENTER);
+
+        mostrarDescripcion();
     }
     
     @Override
     public void actionPerformed(ActionEvent e){
         
+    }
+
+    private void mostrarDescripcion(){
+        //Algoritmos de Ordenamiento
+        btnInsercion.addMouseListener(new MouseAdapter(){
+            public void mouseEntered(MouseEvent e){
+                Descripcion.setText("El algoritmo de ordenamiento por inserción es un algoritmo simple que construye la lista ordenada uno a la vez. Funciona de manera similar a cómo ordenarías cartas en tu mano. Comienza con una lista vacía y toma elementos de la lista original, insertándolos en la posición correcta en la lista ordenada.");
+            }
+            public void mouseExited(MouseEvent e){
+                Descripcion.setText("");
+            }
+        });
+        btnBurbuja.addMouseListener(new MouseAdapter(){
+            public void mouseEntered(MouseEvent e){
+                Descripcion.setText("El algoritmo de ordenamiento de burbuja es un algoritmo simple que compara elementos adyacentes y los intercambia si están en el orden incorrecto. Este proceso se repite hasta que la lista está ordenada. Aunque es fácil de entender, no es eficiente para listas grandes.");
+            }
+            public void mouseExited(MouseEvent e){
+                Descripcion.setText("");
+            }
+        });
+        btnQuickSort.addMouseListener(new MouseAdapter(){
+            public void mouseEntered(MouseEvent e){
+                Descripcion.setText("El algoritmo de ordenamiento rápido (QuickSort) es un algoritmo eficiente que utiliza una estrategia de divide y vencerás. Selecciona un elemento como pivote y partitiona la lista en dos sub-listas, una con elementos menores y otra con elementos mayores. Luego, aplica el mismo proceso recursivamente a cada sub-lista.");
+            }
+            public void mouseExited(MouseEvent e){
+                Descripcion.setText("");
+            }
+        });
+
+        //Algoritmos de Busqueda
+        btnSecuencial.addMouseListener(new MouseAdapter(){
+            public void mouseEntered(MouseEvent e){
+                Descripcion.setText("El algoritmo de búsqueda secuencial (o lineal) recorre la lista uno a uno hasta encontrar el elemento deseado. Es simple de implementar pero puede ser lento para listas grandes.");
+            }
+            public void mouseExited(MouseEvent e){
+                Descripcion.setText("");
+            }
+        });
+        btnBinaria.addMouseListener(new MouseAdapter(){
+            public void mouseEntered(MouseEvent e){
+                Descripcion.setText("El algoritmo de búsqueda binaria (o dicotómica) funciona en listas ordenadas. Compara el elemento buscado con el elemento del medio y elimina la mitad de la lista que no contiene el elemento. Este proceso se repite hasta encontrar el elemento o determinar que no existe.");
+            }
+            public void mouseExited(MouseEvent e){
+                Descripcion.setText("");
+            }
+        });
+
+
     }
 }
