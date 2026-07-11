@@ -3,8 +3,9 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class Ventana extends JFrame implements ActionListener{
-    JLabel titulo;
-    JPanel pCentro, pAlgoritmos, pDescripcion;
+    JLabel titulo,busqueda;
+    JPanel pCentro,C1,C2, pAlgoritmos, pDescripcion;
+    JButton b1,b2,b3;
     
     public Ventana(){
         setSize(900,700);
@@ -26,6 +27,25 @@ public class Ventana extends JFrame implements ActionListener{
         pDescripcion = new JPanel();
 
         add(titulo, BorderLayout.NORTH);
+
+        //Panel centro, opciones
+
+        C1 =new JPanel(new GridLayout(4,1));
+        C2 =new JPanel(new FlowLayout());
+        b1 = new JButton("Busqueda Secuencial"); 
+        b2 = new JButton("Busqueda Binaria");
+        b3 = new JButton("Arreglo de caracteres");
+
+        C1.add(new JLabel("ALGORITMOS DE BUSQUEDA"));
+        C1.add(b1);
+        C1.add(b2);
+        C1.add(b3);
+        C2.add(C1);
+
+        C2.setBackground(Color.BLACK);
+        add(C2,BorderLayout.WEST);
+
+
 
     }
 
