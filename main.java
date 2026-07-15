@@ -1,7 +1,7 @@
 public class main {
     public static void main(String[] args) {
         
-        Ventana ventana = new Ventana();
+        VentanaPrincipal ventana = new VentanaPrincipal();
         ventana.setVisible(true);
         
     }
