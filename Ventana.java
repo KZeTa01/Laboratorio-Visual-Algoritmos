@@ -44,13 +44,18 @@ public class Ventana extends JFrame implements ActionListener{
         lbOrdenamiento = new JLabel("Algoritmos de Ordenamiento");
             lbOrdenamiento.setFont(fSubtemas);
         btnInsercion = new JButton("Inserción");
+        btnInsercion.addActionListener(this);
         btnBurbuja = new JButton("Burbuja");
+        btnBurbuja.addActionListener(this);
         btnQuickSort = new JButton("QuickSort");
+        btnQuickSort.addActionListener(this);
             //Busqueda
         lbBusqueda = new JLabel("Algoritmos de Busqueda");
             lbBusqueda.setFont(fSubtemas);
         btnSecuencial = new JButton("Secuencial o lineal");
+        btnSecuencial.addActionListener(this);
         btnBinaria = new JButton("Binaria o dicotómica");
+
         
         pOrdenamiento.add(lbOrdenamiento);
         pOrdenamiento.add(btnInsercion);
@@ -86,18 +91,24 @@ public class Ventana extends JFrame implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
         if(e.getSource() == btnInsercion){
-            new VentanaInsercion();
+            VentanaInsercion vInsercion = new VentanaInsercion(this);
+            vInsercion.setVisible(true);
         }
         if(e.getSource() == btnBurbuja){
-
+            VentanaBurbuja vBurbuja = new VentanaBurbuja(this);
+            vBurbuja.setVisible(true);
         }
         if(e.getSource() == btnQuickSort){
-
+            VentanaQuickSort vQuickSort = new VentanaQuickSort(this);
+            vQuickSort.setVisible(true);
         }
 
-        if(e.getSource() == btnSecuencial){
-
+        if (e.getSource() == btnSecuencial) {
+            // Pasas 'this' como referencia de que esta Ventana es el padre
+            VentanaSecuencial vSecuencial = new VentanaSecuencial(this);
+            vSecuencial.setVisible(true);
         }
+
         if(e.getSource() == btnBinaria){
 
         }
